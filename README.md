@@ -2,6 +2,8 @@
 
 Drop an image and overlay a configurable pixel grid on top of it. Useful for pixel art, sprite sheets, tilesets, and any task where you need to inspect images at exact pixel coordinates.
 
+[Test it out here 😃](http://pedrovgs.github.io/ImageGridView)
+
 ## ✨ Features
 
 - 📂 Drag & drop any image
