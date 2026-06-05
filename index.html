@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImageGridView</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="drop-zone">
+      <p id="drop-message">Drop an image here</p>
+    </div>
+
+    <div id="app" style="display: none">
+      <div id="ruler-corner"></div>
+      <canvas id="ruler-top"></canvas>
+      <canvas id="ruler-left"></canvas>
+      <div id="viewport">
+        <div id="image-wrapper">
+          <canvas id="grid-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div id="grid-menu">
+      <label>
+        Grid
+        <input id="grid-width" type="number" min="1" max="1000" value="25" />
+        &times;
+        <input id="grid-height" type="number" min="1" max="1000" value="25" />
+      </label>
+    </div>
+    <div id="coordinates">x: 0, y: 0</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

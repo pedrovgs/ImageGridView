@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1a1a1a;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#drop-zone {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#drop-zone.dragover {
+  outline: 4px dashed #4a9eff;
+  outline-offset: -4px;
+}
+
+#drop-message {
+  font-size: 1.5rem;
+  color: #888;
+  pointer-events: none;
+  user-select: none;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 24px 1fr;
+  width: 100vw;
+  height: 100vh;
+}
+
+#ruler-corner {
+  background: #111;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+#ruler-top {
+  display: block;
+  background: #111;
+  border-bottom: 1px solid #333;
+  width: 100%;
+  height: 100%;
+}
+
+#ruler-left {
+  display: block;
+  background: #111;
+  border-right: 1px solid #333;
+  width: 100%;
+  height: 100%;
+}
+
+#viewport {
+  overflow: auto;
+  position: relative;
+  background: #1a1a1a;
+}
+
+#image-wrapper {
+  position: relative;
+}
+
+#image-wrapper img {
+  display: block;
+}
+
+#grid-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+#grid-menu {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#grid-menu label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#grid-menu input {
+  width: 52px;
+  background: #333;
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#coordinates {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  z-index: 10;
+}

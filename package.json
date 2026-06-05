@@ -1,0 +1,23 @@
+{
+  "name": "image-grid-view",
+  "version": "1.0.0",
+  "description": "Drop an image and overlay a configurable grid on top of it",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "format": "prettier --write 'src/**/*.{ts,html,css}'",
+    "format:check": "prettier --check 'src/**/*.{ts,html,css}'"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "eslint": "^9.0.0",
+    "@eslint/js": "^9.0.0",
+    "typescript-eslint": "^8.0.0",
+    "prettier": "^3.4.0"
+  },
+  "license": "Apache-2.0"
+}
