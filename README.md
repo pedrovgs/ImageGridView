@@ -9,7 +9,7 @@ Drop an image and overlay a configurable pixel grid on top of it. Useful for pix
 - 📐 Real-time pointer coordinates (origin at top-left)
 - 🖼️ Image displayed at 100% scale
 
-!(screenshot)[./art/screenshot.png]
+![screenshot](./art/screenshot.png)
 
 ## 🚀 Getting started
 
