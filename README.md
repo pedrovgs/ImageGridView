@@ -8,6 +8,7 @@ Drop an image and overlay a configurable pixel grid on top of it. Useful for pix
 - 🔲 Configurable grid size (default 25×25)
 - 📐 Real-time pointer coordinates (origin at top-left)
 - 🖼️ Image displayed at 100% scale
+- 📎 Copy the specific coordinate to your clipboard on click
 
 ![screenshot](./art/screenshot.png)
 
