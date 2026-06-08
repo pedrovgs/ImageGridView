@@ -74,6 +74,9 @@ body {
 
 #image-wrapper img {
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 #grid-canvas {
