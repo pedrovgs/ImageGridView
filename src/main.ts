@@ -70,6 +70,7 @@ function applyLayout() {
 
   currentImage.style.width = `${displayW}px`;
   currentImage.style.height = `${displayH}px`;
+  updateMarkerPosition();
 
   gridCanvas.width = currentImage.naturalWidth;
   gridCanvas.height = currentImage.naturalHeight;
@@ -289,11 +290,33 @@ viewport.addEventListener("mousemove", (e) => {
   coordinates.textContent = `x: ${x}, y: ${y}`;
 });
 
+const CLICK_MARKER_SVG = `<svg width="24" height="24" viewBox="0 0 1024 1024" fill="red" style="opacity:0.5" xmlns="http://www.w3.org/2000/svg"><path d="M406.055 511.941c0 0.004 0 0.007 0 0.008 0 58.479 47.407 105.886 105.886 105.886 58.478 0 105.886-47.407 105.886-105.886 0-0.004 0-0.008 0-0.008 0-0.003 0-0.007 0-0.007 0-58.478-47.407-105.886-105.886-105.886-58.478 0-105.886 47.407-105.886 105.886 0 0.004 0 0.007 0 0.007zM511.941 859.615c-191.564 0-347.555-155.992-347.555-347.674s155.992-347.555 347.555-347.555 347.555 155.992 347.555 347.555-155.874 347.674-347.555 347.674zM511.941 235.292c-152.565 0-276.65 124.085-276.65 276.65s124.085 276.65 276.65 276.65 276.65-124.085 276.65-276.65-124.085-276.65-276.65-276.65z"/></svg>`;
+
+let clickMarker: HTMLDivElement | null = null;
+let markerImgX = 0;
+let markerImgY = 0;
+
+function updateMarkerPosition() {
+  if (!clickMarker) return;
+  clickMarker.style.left = `${markerImgX * scale}px`;
+  clickMarker.style.top = `${markerImgY * scale}px`;
+}
+
 viewport.addEventListener("click", (e) => {
   if (!currentImage) return;
   const { x, y } = toImageCoords(e);
   navigator.clipboard.writeText(`PPoint(${x}, ${y})`);
   coordinates.textContent = `Copied PPoint(${x}, ${y})`;
+
+  if (clickMarker) clickMarker.remove();
+  markerImgX = x;
+  markerImgY = y;
+  clickMarker = document.createElement("div");
+  clickMarker.innerHTML = CLICK_MARKER_SVG;
+  clickMarker.style.cssText =
+    "position:absolute;pointer-events:none;transform:translate(-50%,-50%)";
+  updateMarkerPosition();
+  wrapper.appendChild(clickMarker);
 });
 
 gridWidthInput.addEventListener("input", drawGrid);
